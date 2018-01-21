@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="{{static}}/img/logo.png">
+    <title>itest</title>
+    <meta charset="UTF-8"></meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="{{static}}/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <link href="{{static}}/mypage.css" type="text/css" rel="stylesheet" />
+    <link href="{{static}}/datatables/dataTables.bootstrap.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <div name="container">
+        <div id="summarynum" style="display:none"></div>
+        <div class="row col-xs-20" id="summary" style="margin:15px;">
+            <div class="col-xs-6">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">测试概要</h3>
+                    </div>
+                    <div class="panel-body text-center">
+                        <table class="table table-bordered table-condensed table-hover">
+                            <tbody>
+                            <tr>
+                                <td><strong>用例文件</strong></td>
+                                <td>{{casefile}}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>开始时间</strong></td>
+                                <td>{{starttime}}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>结束时间</strong></td>
+                                <td>{{endtime}}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>case总数</strong></td>
+                                <td>{{total}}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>成功数</strong></td>
+                                <td id="success">{{success}}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>失败数</strong></td>
+                                <td id="fail">{{fail}}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>错误数</strong></td>
+                                <td id="error">{{error}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">概要图</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div id="summarypic" style="height:236px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row col-xs-20" id="detail" style="margin:15px;">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">测试详情 (tips:鼠标停留在单元格上可显示完整内容)</h3>
+                </div>
+                <div class="panel-body">
+                    <table id="detailtable" class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>用例名称</th>
+                                <th>标识</th>
+                                <th>URL</th>
+                                <th>类型</th>
+                                <th>接口入参</th>
+                                <th>预期断言</th>
+                                <th>实际结果</th>
+                                <th>测试结果</th>
+                                <th>响应时间(ms)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for data in detail %}
+                            <tr>
+                                <td title='{{data.interface_name}}'>{{data.interface_name}}</td>
+                                <td title='{{data.identity}}'>{{data.identity}}</td>
+                                <td title='{{data.url}}'>{{data.url}}</td>
+                                <td title='{{data.method}}'>{{data.method}}</td>
+                                <td title='{{data.data}}'>{{data.data}}</td>
+                                <td title='{{data.assertion}}'>{{data.assertion}}</td>
+                                <td title='{{data.response}}'>{{data.response}}</td>
+                                <td title='{{data.status}}'>{{data.status}}</td>
+                                <td title='{{data.elapsed}}'>{{data.elapsed}}</td>
+                            </tr>
+                            {%endfor%}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="result"></div>
+    </div>  
+    <script src="{{static}}/jquery-3.1.0.min.js" type="text/javascript"></script>
+    <script src="{{static}}/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="{{static}}/echarts.common.min.js" type="text/javascript"></script>
+    <script src="{{static}}/datatables/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="{{static}}/datatables/dataTables.bootstrap.min.js" type="text/javascript"></script>
+    <script src="{{static}}/index.js" type="text/javascript"></script>
+
+</body>
+<footer class="footer">
+    <div class="container">
+        <a href="http://vdcoding.com/"></a>
+    </div>
+</footer>
+
+</html>

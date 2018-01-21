@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="D:\mycode\Python\tooldemos\itest\itest\static/img/logo.png">
+    <title>itest</title>
+    <meta charset="UTF-8"></meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="D:\mycode\Python\tooldemos\itest\itest\static/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <link href="D:\mycode\Python\tooldemos\itest\itest\static/mypage.css" type="text/css" rel="stylesheet" />
+    <link href="D:\mycode\Python\tooldemos\itest\itest\static/datatables/dataTables.bootstrap.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <div name="container">
+        <div id="summarynum" style="display:none"></div>
+        <div class="row col-xs-20" id="summary" style="margin:15px;">
+            <div class="col-xs-6">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">测试概要</h3>
+                    </div>
+                    <div class="panel-body text-center">
+                        <table class="table table-bordered table-condensed table-hover">
+                            <tbody>
+                            <tr>
+                                <td><strong>用例文件</strong></td>
+                                <td>testcase.xlsx</td>
+                            </tr>
+                            <tr>
+                                <td><strong>开始时间</strong></td>
+                                <td>2018-01-21 11:30:34</td>
+                            </tr>
+                            <tr>
+                                <td><strong>结束时间</strong></td>
+                                <td>2018-01-21 11:30:36</td>
+                            </tr>
+                            <tr>
+                                <td><strong>case总数</strong></td>
+                                <td>13</td>
+                            </tr>
+                            <tr>
+                                <td><strong>成功数</strong></td>
+                                <td id="success">6</td>
+                            </tr>
+                            <tr>
+                                <td><strong>失败数</strong></td>
+                                <td id="fail">6</td>
+                            </tr>
+                            <tr>
+                                <td><strong>错误数</strong></td>
+                                <td id="error">1</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">概要图</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div id="summarypic" style="height:236px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row col-xs-20" id="detail" style="margin:15px;">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">测试详情 (tips:鼠标停留在单元格上可显示完整内容)</h3>
+                </div>
+                <div class="panel-body">
+                    <table id="detailtable" class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>用例名称</th>
+                                <th>标识</th>
+                                <th>URL</th>
+                                <th>类型</th>
+                                <th>接口入参</th>
+                                <th>预期断言</th>
+                                <th>实际结果</th>
+                                <th>测试结果</th>
+                                <th>响应时间(ms)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr>
+                                <td title='物流查询1'>物流查询1</td>
+                                <td title='testcase.xlsx-Sheet2-1'>testcase.xlsx-Sheet2-1</td>
+                                <td title='http://route.showapi.com/64-19'>http://route.showapi.com/64-19</td>
+                                <td title='post'>post</td>
+                                <td title='{"showapi_appid": "100", "showapi_sign": "698d51a19d8a121ce581499d7b701668","nu":"428384713476"}'>{"showapi_appid": "100", "showapi_sign": "698d51a19d8a121ce581499d7b701668","nu":"428384713476"}</td>
+                                <td title='"showapi_res_code": 0'>"showapi_res_code": 0</td>
+                                <td title='{showapi_res_code:-1004,showapi_res_error:验证有误!签名验证失败!正确的签名是70CEAE380477F11D58B53E22750143E8,showapi_res_body:{}}'>{showapi_res_code:-1004,showapi_res_error:验证有误!签名验证失败!正确的签名是70CEAE380477F11D58B53E22750143E8,showapi_res_body:{}}</td>
+                                <td title='Fail'>Fail</td>
+                                <td title='107'>107</td>
+                            </tr>
+                            
+                            <tr>
+                                <td title='物流查询2'>物流查询2</td>
+                                <td title='testcase.xlsx-Sheet2-2'>testcase.xlsx-Sheet2-2</td>
+                                <td title='http://route.showapi.com/64-19'>http://route.showapi.com/64-19</td>
+                                <td title='post'>post</td>
+                                <td title='{"showapi_appid": "123", "showapi_sign": "698d51a19d8a121ce581499d7b701668","nu":"428384713476"}'>{"showapi_appid": "123", "showapi_sign": "698d51a19d8a121ce581499d7b701668","nu":"428384713476"}</td>
+                                <td title='"showapi_res_code": 0'>"showapi_res_code": 0</td>
+                                <td title='{showapi_res_code:-1004,showapi_res_error:验证有误!签名验证失败!正确的签名是0F081C8B361927A14F1AAD2BE4424B14,showapi_res_body:{}}'>{showapi_res_code:-1004,showapi_res_error:验证有误!签名验证失败!正确的签名是0F081C8B361927A14F1AAD2BE4424B14,showapi_res_body:{}}</td>
+                                <td title='Fail'>Fail</td>
+                                <td title='68'>68</td>
+                            </tr>
+                            
+                            <tr>
+                                <td title='物流查询3'>物流查询3</td>
+                                <td title='testcase.xlsx-Sheet2-3'>testcase.xlsx-Sheet2-3</td>
+                                <td title='http://route.shoapi.com/'>http://route.shoapi.com/</td>
+                                <td title='post'>post</td>
+                                <td title='{"showapi_appid": 888, "showapi_sign": "698d51a19d8a121ce581499d7b701668","nu":"428384713476"}'>{"showapi_appid": 888, "showapi_sign": "698d51a19d8a121ce581499d7b701668","nu":"428384713476"}</td>
+                                <td title='"showapi_res_code": 0'>"showapi_res_code": 0</td>
+                                <td title='(MaxRetryError(HTTPConnectionPool(host=route.shoapi.com,port=80):Maxretriesexceededwithurl:/(CausedbyNewConnectionError(<requests.packages.urllib3.connection.HTTPConnectionobjectat0x000002703588FD30>:Failedtoestablishanewconnection:[Errno11001]getaddrinfofailed,)),),)'>(MaxRetryError(HTTPConnectionPool(host=route.shoapi.com,port=80):Maxretriesexceededwithurl:/(CausedbyNewConnectionError(<requests.packages.urllib3.connection.HTTPConnectionobjectat0x000002703588FD30>:Failedtoestablishanewconnection:[Errno11001]getaddrinfofailed,)),),)</td>
+                                <td title='Error'>Error</td>
+                                <td title='0'>0</td>
+                            </tr>
+                            
+                            <tr>
+                                <td title='物流查询4'>物流查询4</td>
+                                <td title='testcase.xlsx-Sheet2-4'>testcase.xlsx-Sheet2-4</td>
+                                <td title='http://route.showapi.com/64-19'>http://route.showapi.com/64-19</td>
+                                <td title='post'>post</td>
+                                <td title='{"showapi_appid": 100, "showapi_sign": "698d51a19d8a121ce581499d7b701668","nu":"428384713476"}'>{"showapi_appid": 100, "showapi_sign": "698d51a19d8a121ce581499d7b701668","nu":"428384713476"}</td>
+                                <td title='"showapi_res_code": 0'>"showapi_res_code": 0</td>
+                                <td title='{showapi_res_code:-1004,showapi_res_error:验证有误!签名验证失败!正确的签名是70CEAE380477F11D58B53E22750143E8,showapi_res_body:{}}'>{showapi_res_code:-1004,showapi_res_error:验证有误!签名验证失败!正确的签名是70CEAE380477F11D58B53E22750143E8,showapi_res_body:{}}</td>
+                                <td title='Fail'>Fail</td>
+                                <td title='85'>85</td>
+                            </tr>
+                            
+                            <tr>
+                                <td title='物流查询5'>物流查询5</td>
+                                <td title='testcase.xlsx-Sheet2-5'>testcase.xlsx-Sheet2-5</td>
+                                <td title='http://route.showapi.com/64-19'>http://route.showapi.com/64-19</td>
+                                <td title='post'>post</td>
+                                <td title='{"showapi_appid": 100, "showapi_sign": "698d51a19d8a121ce581499d7b701668","nu":"428384713476"}'>{"showapi_appid": 100, "showapi_sign": "698d51a19d8a121ce581499d7b701668","nu":"428384713476"}</td>
+                                <td title='"showapi_res_code": 0'>"showapi_res_code": 0</td>
+                                <td title='{showapi_res_code:-1004,showapi_res_error:验证有误!签名验证失败!正确的签名是70CEAE380477F11D58B53E22750143E8,showapi_res_body:{}}'>{showapi_res_code:-1004,showapi_res_error:验证有误!签名验证失败!正确的签名是70CEAE380477F11D58B53E22750143E8,showapi_res_body:{}}</td>
+                                <td title='Fail'>Fail</td>
+                                <td title='66'>66</td>
+                            </tr>
+                            
+                            <tr>
+                                <td title='物流查询6'>物流查询6</td>
+                                <td title='testcase.xlsx-Sheet2-6'>testcase.xlsx-Sheet2-6</td>
+                                <td title='http://www.kuaidi100.com/query'>http://www.kuaidi100.com/query</td>
+                                <td title='get'>get</td>
+                                <td title='{"type":"yuantong","postid":"123123"}'>{"type":"yuantong","postid":"123123"}</td>
+                                <td title='"message":"ok"'>"message":"ok"</td>
+                                <td title='{message:ok,nu:123123,ischeck:0,condition:00,com:yuantong,status:200,state:0,data:[{time:2017-11-1306:43:25,ftime:2017-11-1306:43:25,context:17点半前华南侧门领取圆通快递妈妈驿站已发出自提短信请上门自提如有疑问请联系13067311600,location:null},{time:2017-11-1306:42:45,ftime:2017-11-1306:42:45,context:快件已到达17点半前华南侧门领取圆通快递妈妈驿站如有疑问请联系13067311600,location:null}]}'>{message:ok,nu:123123,ischeck:0,condition:00,com:yuantong,status:200,state:0,data:[{time:2017-11-1306:43:25,ftime:2017-11-1306:43:25,context:17点半前华南侧门领取圆通快递妈妈驿站已发出自提短信请上门自提如有疑问请联系13067311600,location:null},{time:2017-11-1306:42:45,ftime:2017-11-1306:42:45,context:快件已到达17点半前华南侧门领取圆通快递妈妈驿站如有疑问请联系13067311600,location:null}]}</td>
+                                <td title='Success'>Success</td>
+                                <td title='570'>570</td>
+                            </tr>
+                            
+                            <tr>
+                                <td title='物流查询7'>物流查询7</td>
+                                <td title='testcase.xlsx-Sheet2-7'>testcase.xlsx-Sheet2-7</td>
+                                <td title='http://www.kuaidi100.com/query'>http://www.kuaidi100.com/query</td>
+                                <td title='get'>get</td>
+                                <td title=''></td>
+                                <td title='"message":"ok"'>"message":"ok"</td>
+                                <td title='{message:参数错误,nu:,ischeck:0,condition:,com:,status:400,state:0,data:[]}'>{message:参数错误,nu:,ischeck:0,condition:,com:,status:400,state:0,data:[]}</td>
+                                <td title='Fail'>Fail</td>
+                                <td title='87'>87</td>
+                            </tr>
+                            
+                            <tr>
+                                <td title='物流查询8'>物流查询8</td>
+                                <td title='testcase.xlsx-Sheet2-8'>testcase.xlsx-Sheet2-8</td>
+                                <td title='http://www.kuaidi100.com/query'>http://www.kuaidi100.com/query</td>
+                                <td title='get'>get</td>
+                                <td title='{"type":"zhongtong","postid":"123123"}'>{"type":"zhongtong","postid":"123123"}</td>
+                                <td title='status:201'>status:201</td>
+                                <td title='{message:快递公司参数异常：单号不存在或者已经过期,nu:,ischeck:0,condition:,com:,status:201,state:0,data:[]}'>{message:快递公司参数异常：单号不存在或者已经过期,nu:,ischeck:0,condition:,com:,status:201,state:0,data:[]}</td>
+                                <td title='Success'>Success</td>
+                                <td title='218'>218</td>
+                            </tr>
+                            
+                            <tr>
+                                <td title='物流查询9'>物流查询9</td>
+                                <td title='testcase.xlsx-Sheet2-9'>testcase.xlsx-Sheet2-9</td>
+                                <td title='http://www.kuaidi100.com/query'>http://www.kuaidi100.com/query</td>
+                                <td title='get'>get</td>
+                                <td title='{"type":"yunda","postid":"123123"}'>{"type":"yunda","postid":"123123"}</td>
+                                <td title='status:201'>status:201</td>
+                                <td title='{message:快递公司参数异常：单号不存在或者已经过期,nu:,ischeck:0,condition:,com:,status:201,state:0,data:[]}'>{message:快递公司参数异常：单号不存在或者已经过期,nu:,ischeck:0,condition:,com:,status:201,state:0,data:[]}</td>
+                                <td title='Success'>Success</td>
+                                <td title='230'>230</td>
+                            </tr>
+                            
+                            <tr>
+                                <td title='物流查询10'>物流查询10</td>
+                                <td title='testcase.xlsx-Sheet2-10'>testcase.xlsx-Sheet2-10</td>
+                                <td title='http://www.kuaidi100.com/query'>http://www.kuaidi100.com/query</td>
+                                <td title='get'>get</td>
+                                <td title='{"type":"tiantian","postid":"123123"}'>{"type":"tiantian","postid":"123123"}</td>
+                                <td title='status:201'>status:201</td>
+                                <td title='{message:快递公司参数异常：单号不存在或者已经过期,nu:,ischeck:0,condition:,com:,status:201,state:0,data:[]}'>{message:快递公司参数异常：单号不存在或者已经过期,nu:,ischeck:0,condition:,com:,status:201,state:0,data:[]}</td>
+                                <td title='Success'>Success</td>
+                                <td title='94'>94</td>
+                            </tr>
+                            
+                            <tr>
+                                <td title='物流查询11'>物流查询11</td>
+                                <td title='testcase.xlsx-Sheet2-11'>testcase.xlsx-Sheet2-11</td>
+                                <td title='http://www.kuaidi100.com/query'>http://www.kuaidi100.com/query</td>
+                                <td title='get'>get</td>
+                                <td title='{"type":"quanfengkuaidi","postid":"123123"}'>{"type":"quanfengkuaidi","postid":"123123"}</td>
+                                <td title='status:201'>status:201</td>
+                                <td title='{message:快递公司参数异常：单号不存在或者已经过期,nu:,ischeck:0,condition:,com:,status:201,state:0,data:[]}'>{message:快递公司参数异常：单号不存在或者已经过期,nu:,ischeck:0,condition:,com:,status:201,state:0,data:[]}</td>
+                                <td title='Success'>Success</td>
+                                <td title='87'>87</td>
+                            </tr>
+                            
+                            <tr>
+                                <td title='物流查询12'>物流查询12</td>
+                                <td title='testcase.xlsx-Sheet2-12'>testcase.xlsx-Sheet2-12</td>
+                                <td title='http://www.kuaidi100.com/query'>http://www.kuaidi100.com/query</td>
+                                <td title='get'>get</td>
+                                <td title='{"type":"debangwuliu","postid":"123123"}'>{"type":"debangwuliu","postid":"123123"}</td>
+                                <td title='status:201'>status:201</td>
+                                <td title='{message:快递公司参数异常：单号不存在或者已经过期,nu:123123,ischeck:0,condition:,com:debangwuliu,status:201,state:0,data:[]}'>{message:快递公司参数异常：单号不存在或者已经过期,nu:123123,ischeck:0,condition:,com:debangwuliu,status:201,state:0,data:[]}</td>
+                                <td title='Success'>Success</td>
+                                <td title='132'>132</td>
+                            </tr>
+                            
+                            <tr>
+                                <td title='物流查询13'>物流查询13</td>
+                                <td title='testcase.xlsx-Sheet2-13'>testcase.xlsx-Sheet2-13</td>
+                                <td title='http://www.kuaidi100.com/query'>http://www.kuaidi100.com/query</td>
+                                <td title='get'>get</td>
+                                <td title='{"type":"shunfeng","postid":"123123"}'>{"type":"shunfeng","postid":"123123"}</td>
+                                <td title='status:201'>status:201</td>
+                                <td title='{message:ok,nu:123123,ischeck:1,condition:F00,com:shunfeng,status:200,state:3,data:[{time:2017-07-0116:38:11,ftime:2017-07-0116:38:11,context:[自提柜]已签收，签收人凭取货码签收。感谢使用顺丰速运及尚都家园23号楼格格货栈【自提柜】，期待再次为您服务。,location:null},{time:2017-07-0116:14:15,ftime:2017-07-0116:14:15,context:[自提柜]您的快件被快递员取出，请等待快递员与您联系，电话15170080374。,location:null},{time:2017-07-0115:42:44,ftime:2017-07-0115:42:44,context:[自提柜]您的快件已被德阳绵竹市世纪东城【自提柜】代收，请及时取件。有问题请联系派件员15982934290,location:null},{time:2017-07-0115:11:51,ftime:2017-07-0115:11:51,context:[自提柜]您的快件已被国新花园B速递易【自提柜】代收，请及时取件。有问题请联系派件员13556483621,location:null},{time:2017-07-0114:26:09,ftime:2017-07-0114:26:09,context:[自提柜]您的快件已被成都市成华区蓝光？锦绣城三期【自提柜】代收，请及时取件。有问题请联系派件员18502815258,location:null},{time:2017-07-0112:53:57,ftime:2017-07-0112:53:57,context:[自提柜]您的快件已被凯旋名都速递易【自提柜】代收，请及时取件。有问题请联系派件员15727458022,location:null},{time:2017-07-0111:31:00,ftime:2017-07-0111:31:00,context:[自提柜]您的快件已被朝阳公寓速递易【自提柜】代收，请及时取件。有问题请联系派件员18163566455,location:null},{time:2017-07-0111:03:17,ftime:2017-07-0111:03:17,context:[自提柜]您的快件被快递员取出，请等待快递员与您联系，电话15897655625。,location:null},{time:2017-07-0110:52:07,ftime:2017-07-0110:52:07,context:[自提柜]您的快件被快递员取出，请等待快递员与您联系，电话18084702959。,location:null},{time:2017-07-0110:37:32,ftime:2017-07-0110:37:32,context:[自提柜]您的快件已被凤湖新城二区速递易【自提柜】代收，请及时取件。有问题请联系派件员18084702959,location:null},{time:2017-07-0110:29:27,ftime:2017-07-0110:29:27,context:[自提柜]您的快件被快递员取出，请等待快递员与您联系，电话15013445859。,location:null},{time:2017-07-0110:04:19,ftime:2017-07-0110:04:19,context:[自提柜]您的快件被快递员取出，请等待快递员与您联系，电话15323836349。,location:null},{time:2017-07-0109:07:54,ftime:2017-07-0109:07:54,context:[自提柜]您的快件被快递员取出，请等待快递员与您联系，电话13275236671。,location:null},{time:2017-07-0108:58:00,ftime:2017-07-0108:58:00,context:[自提柜]您的快件已被尚都家园23号楼格格货栈【自提柜】代收，请及时取件。有问题请联系派件员15140061505,location:null}]}'>{message:ok,nu:123123,ischeck:1,condition:F00,com:shunfeng,status:200,state:3,data:[{time:2017-07-0116:38:11,ftime:2017-07-0116:38:11,context:[自提柜]已签收，签收人凭取货码签收。感谢使用顺丰速运及尚都家园23号楼格格货栈【自提柜】，期待再次为您服务。,location:null},{time:2017-07-0116:14:15,ftime:2017-07-0116:14:15,context:[自提柜]您的快件被快递员取出，请等待快递员与您联系，电话15170080374。,location:null},{time:2017-07-0115:42:44,ftime:2017-07-0115:42:44,context:[自提柜]您的快件已被德阳绵竹市世纪东城【自提柜】代收，请及时取件。有问题请联系派件员15982934290,location:null},{time:2017-07-0115:11:51,ftime:2017-07-0115:11:51,context:[自提柜]您的快件已被国新花园B速递易【自提柜】代收，请及时取件。有问题请联系派件员13556483621,location:null},{time:2017-07-0114:26:09,ftime:2017-07-0114:26:09,context:[自提柜]您的快件已被成都市成华区蓝光？锦绣城三期【自提柜】代收，请及时取件。有问题请联系派件员18502815258,location:null},{time:2017-07-0112:53:57,ftime:2017-07-0112:53:57,context:[自提柜]您的快件已被凯旋名都速递易【自提柜】代收，请及时取件。有问题请联系派件员15727458022,location:null},{time:2017-07-0111:31:00,ftime:2017-07-0111:31:00,context:[自提柜]您的快件已被朝阳公寓速递易【自提柜】代收，请及时取件。有问题请联系派件员18163566455,location:null},{time:2017-07-0111:03:17,ftime:2017-07-0111:03:17,context:[自提柜]您的快件被快递员取出，请等待快递员与您联系，电话15897655625。,location:null},{time:2017-07-0110:52:07,ftime:2017-07-0110:52:07,context:[自提柜]您的快件被快递员取出，请等待快递员与您联系，电话18084702959。,location:null},{time:2017-07-0110:37:32,ftime:2017-07-0110:37:32,context:[自提柜]您的快件已被凤湖新城二区速递易【自提柜】代收，请及时取件。有问题请联系派件员18084702959,location:null},{time:2017-07-0110:29:27,ftime:2017-07-0110:29:27,context:[自提柜]您的快件被快递员取出，请等待快递员与您联系，电话15013445859。,location:null},{time:2017-07-0110:04:19,ftime:2017-07-0110:04:19,context:[自提柜]您的快件被快递员取出，请等待快递员与您联系，电话15323836349。,location:null},{time:2017-07-0109:07:54,ftime:2017-07-0109:07:54,context:[自提柜]您的快件被快递员取出，请等待快递员与您联系，电话13275236671。,location:null},{time:2017-07-0108:58:00,ftime:2017-07-0108:58:00,context:[自提柜]您的快件已被尚都家园23号楼格格货栈【自提柜】代收，请及时取件。有问题请联系派件员15140061505,location:null}]}</td>
+                                <td title='Fail'>Fail</td>
+                                <td title='92'>92</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="result"></div>
+    </div>  
+    <script src="D:\mycode\Python\tooldemos\itest\itest\static/jquery-3.1.0.min.js" type="text/javascript"></script>
+    <script src="D:\mycode\Python\tooldemos\itest\itest\static/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="D:\mycode\Python\tooldemos\itest\itest\static/echarts.common.min.js" type="text/javascript"></script>
+    <script src="D:\mycode\Python\tooldemos\itest\itest\static/datatables/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="D:\mycode\Python\tooldemos\itest\itest\static/datatables/dataTables.bootstrap.min.js" type="text/javascript"></script>
+    <script src="D:\mycode\Python\tooldemos\itest\itest\static/index.js" type="text/javascript"></script>
+
+</body>
+<footer class="footer">
+    <div class="container">
+        <a href="http://vdcoding.com/"></a>
+    </div>
+</footer>
+
+</html>
